@@ -7,7 +7,6 @@ from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QHBoxLayout,
                              QVBoxLayout, QLabel, QFileDialog)
 from PyQt5.QtCore import Qt, QThread
-
 # *******************************************************************************#
 start_time = time.time()
 
@@ -23,22 +22,18 @@ def resource_path(relative):
         return os.path.join(os.path.abspath("."), relative)
 
 
-class MyButton(QPushButton):
-    """
-        Класс MyButton, который наследуется от класса QPushButton в нем мы переопределяем наши кнопки
-        для дальнейшего использования в нашем графическом окне
-    """
+class MyButtonForConvert(QPushButton):
     __stylesheet__ = '''
         QPushButton{
-            background-color: #8D838E;
+            background-color: #3C3F41;
             color: #E1E1E1;
             border-radius: 6px;        
         }
         QPushButton:hover {
-        background-color:rgb(31,101,163);
+        background-color: #198754;
         }
         QPushButton:pressed {
-        background-color:rgb(31,101,163);
+        background-color: #198754;
         }
     '''
 
@@ -48,14 +43,10 @@ class MyButton(QPushButton):
         self.setMinimumHeight(20)
         self.setFont(QFont('SansSerif', 10, QFont.Bold))
         self.setText(self.text_on_btn)
-        self.setStyleSheet(MyButton.__stylesheet__)
+        self.setStyleSheet(MyButtonForConvert.__stylesheet__)
 
 
 class MyLabel(QLabel):
-    """
-        Класс MyLabel наследуется от класса QLabel в этом классе мы переопределяем
-        визуальную составляющую нашего \"label'a\" и добавляем функцианал drag'n'drop'a
-    """
 
     def __init__(self):
         super().__init__()
@@ -64,7 +55,7 @@ class MyLabel(QLabel):
         self.setText("<font color='#756DAC'><b>Перетените сюда (.doxc) файл</b></font>")
         self.setStyleSheet('''
             QLabel{
-                border: 3px dashed #5D42B9;
+                border: 3px dashed #9146FF;
             }
         ''')
         self.setAcceptDrops(True)
@@ -93,10 +84,7 @@ class MyLabel(QLabel):
 
 
 class MyThread(QThread):
-    """
-    Класс MyThread наследуется от класса QThread в ней мы создаем процесс в отдельном потоке
-     для того чтобы наша программа не сталкивалась с проблемой (зависающего экрана) во время процесса конвертации файла
-    """
+
     def __init__(self, path):
         super().__init__()
         self.path = path
@@ -119,12 +107,6 @@ class MyThread(QThread):
 
 
 class Window(QWidget):
-    """
-        Главное окно нашего приложения в котором будут размещаться все компоненты
-        нашего прложения, функционал и логика приложения.
-        Мы создаем класс Window наследуясь от класс QWidget и переопределяем
-        его по мере необходимости добавляя новые компоненты и их реализации
-    """
 
     def __init__(self):
         super().__init__()
@@ -139,11 +121,11 @@ class Window(QWidget):
         global convertBtn
         self.label = MyLabel()
 
-        convertBtn = MyButton('convert')
+        convertBtn = MyButtonForConvert('convert')
         convertBtn.setEnabled(False)
         convertBtn.clicked.connect(self.convert)
 
-        self.folderBtn = MyButton('  select folder')
+        self.folderBtn = MyButtonForConvert('select folder')
         self.folderBtn.setIcon(QIcon(resource_path(r'icons\folders.png')))
         self.folderBtn.clicked.connect(self.select_folder)
 

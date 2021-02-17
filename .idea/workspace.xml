@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="496a682f-4700-44e3-9ab7-3af9f2182f79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2pdf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2pdf/ico/pdf.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2pdf/ico/pdf_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2pdf/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx_to_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docx_to_pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +167,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
